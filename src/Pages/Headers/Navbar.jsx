@@ -3,7 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { BsList } from "react-icons/bs";
 import Container from "../../Shared/Container";
 import useAuth from "../../Hooks/useAuth";
-import navLogo from "../../assets/images/navLogo.png"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
 const Navbar = () => {
 
   const { user , logOut} = useAuth()
@@ -48,7 +49,7 @@ const Navbar = () => {
                   isActive ? 'btn btn-info btn-sm dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
                 }
               >
-                Donation Campaigns
+                Donation
               </NavLink>
 
 
@@ -68,20 +69,21 @@ const Navbar = () => {
         {/* pc */}
 
         <div className="navbar-center">
-          <img src={navLogo} className="w-6 " alt="" />
+          
+         < FontAwesomeIcon size={10} icon={faPaw} className=" text-sm text-black py-2 px-2 rounded-md bg-rose-500 " />
           <h2 className="text-white font-medium uppercase pl-2 mr-2"> Cozy Pets</h2>
           <div className=" md:ml-48 lg:ml-96 hidden lg:block md:block items-center space-x-5">
 
             <NavLink to="/" className={({ isActive }) =>
-              isActive ? ' text-sky-400 font-medium ' : '  dark:text-white text-white hover:text-pink-400 '
+              isActive ? ' text-rose-500 text-lg font-medium ' : '  dark:text-white text-white hover:text-cyan-400 '
             } > Home </NavLink>
 
             <NavLink to="/petListing" className={({ isActive }) =>
-              isActive ? 'text-sky-400 font-medium ' : ' font-medium  dark:text-white text-white hover:text-pink-400'
+              isActive ? 'text-rose-500  font-medium ' : ' font-medium  dark:text-white text-white hover:text-cyan-400'
             }>  Pet Listing </NavLink>
 
             <NavLink to="/donation" className={({ isActive }) =>
-              isActive ? 'text-sky-400 font-medium ' : ' font-medium  dark:text-white text-white hover:text-pink-400'
+              isActive ? 'text-rose-500  font-medium ' : ' font-medium  dark:text-white text-white hover:text-cyan-400'
             }  >  Donation Campaigns </NavLink>
 
 
@@ -119,7 +121,7 @@ const Navbar = () => {
               </ul>
             </div>
               :
-              <Link to={'/login'}> <button className="hover:bg-cyan-500 bg-rose-400 btn btn-sm rounded-full text-black font-semibold   ">
+              <Link to={'/login'}> <button className="hover:bg-pink-400 bg-rose-500 btn btn-sm rounded-full text-black font-semibold   ">
             <BiLogInCircle className=" text-xl  hidden lg:block"></BiLogInCircle>
         
             Login </button></Link>
