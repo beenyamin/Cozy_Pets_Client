@@ -1,12 +1,6 @@
 
 
 
-ANIMALS NEED
-
-Your Help!
-You can chip in with money & effort!  Cats, Dogs and Even Raccoons Adopt Any Pet You Like!
-
-
 
 
 

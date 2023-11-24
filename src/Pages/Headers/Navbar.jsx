@@ -4,7 +4,6 @@ import { BsList } from "react-icons/bs";
 import Container from "../../Shared/Container";
 import useAuth from "../../Hooks/useAuth";
 import navLogo from "../../assets/images/navLogo.png"
-
 const Navbar = () => {
 
   const { user , logOut} = useAuth()
@@ -13,7 +12,6 @@ const Navbar = () => {
       <div className="navbar lg:px-10 max-w-screen-xl fixed bg-opacity-10 bg-white z-10 ">
 
         {/* Phone */}
-
         <div className="drawer md:hidden lg:hidden">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
@@ -62,8 +60,6 @@ const Navbar = () => {
               >
                 Borrowed Book
               </NavLink> */}
-
-
             </ul>
           </div>
         </div>
@@ -123,13 +119,12 @@ const Navbar = () => {
               </ul>
             </div>
               :
-              <Link to={'/login'}> <button className="hover:bg-or-500 bg-yellow-400 btn btn-sm rounded-full text-black font-semibold   ">
+              <Link to={'/login'}> <button className="hover:bg-cyan-500 bg-rose-400 btn btn-sm rounded-full text-black font-semibold   ">
             <BiLogInCircle className=" text-xl  hidden lg:block"></BiLogInCircle>
+        
             Login </button></Link>
           }
-
-
-         
+        
         </div>
 
         {/* </div> */}

@@ -1,11 +1,10 @@
 
 
+
 const AddHere = () => {
 
     return (
-        <div className=" ml-48 my-20">
-
-     </div>
+       <div></div>
     );
 };
 

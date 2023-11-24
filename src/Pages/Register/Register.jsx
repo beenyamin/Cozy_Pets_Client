@@ -122,7 +122,7 @@ const Register = () => {
                                     accept='image/*' />
                             </div>
                         
-                            <button type="submit" className="w-full font-medium bg-rose-400 text-black py-2 rounded-md hover:bg-rose-600 focus:outline-none focus:ring focus:border-blue-300" >
+                            <button type="submit" className="w-full font-medium bg-rose-400 text-white py-2 rounded-md hover:bg-rose-600 focus:outline-none focus:ring focus:border-blue-300" >
                                
                                  {loading ? (
                                 < ImSpinner className='animate-spin m-auto' />
