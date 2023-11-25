@@ -28,7 +28,7 @@ const Navbar = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-sm btn-info dark:text-black text-white' : 'btn btn-ghost dark:text-black btn-sm'
+                  isActive ? 'btn btn-sm btn-ghost dark:text-black text-white' : 'btn btn-ghost dark:text-black btn-sm'
                 }
 
               >
@@ -38,15 +38,15 @@ const Navbar = () => {
               <NavLink
                 to="/petListing"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-info btn-sm dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
+                  isActive ? 'btn btn-ghost btn-sm dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
                 }
               >
                 Pet Listing
               </NavLink>
               <NavLink
-                to="/allBooks"
+                to="/donation"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-info btn-sm dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
+                  isActive ? 'btn btn-ghost btn-sm dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
                 }
               >
                 Donation
@@ -70,7 +70,7 @@ const Navbar = () => {
 
         <div className="navbar-center">
           
-         < FontAwesomeIcon size={10} icon={faPaw} className=" text-sm text-black py-2 px-2 rounded-md bg-rose-500 " />
+         < FontAwesomeIcon size={10} icon={faPaw} className=" text-sm text-black lg:ml-2 py-2 px-2 rounded-md bg-rose-500 " />
           <h2 className="text-white font-medium uppercase pl-2 mr-2"> Cozy Pets</h2>
           <div className=" md:ml-48 lg:ml-96 hidden lg:block md:block items-center space-x-5">
 
@@ -121,7 +121,7 @@ const Navbar = () => {
               </ul>
             </div>
               :
-              <Link to={'/login'}> <button className="hover:bg-pink-400 bg-rose-500 btn btn-sm rounded-full text-black font-semibold   ">
+              <Link to={'/login'}> <button className="hover:bg-pink-400 mr-2 bg-rose-500 btn btn-sm rounded-full text-black font-semibold   ">
             <BiLogInCircle className=" text-xl  hidden lg:block"></BiLogInCircle>
         
             Login </button></Link>

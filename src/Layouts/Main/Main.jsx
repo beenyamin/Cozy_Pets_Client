@@ -10,7 +10,10 @@ const Main = () => {
             <div className=''>
                 <Outlet></Outlet>
             </div>
+
+            <div className="max-w-5xl mx-auto">
             <Footer></Footer>
+            </div>
 
             
            
