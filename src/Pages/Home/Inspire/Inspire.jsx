@@ -11,11 +11,11 @@ import {  faCat , faDove} from '@fortawesome/free-solid-svg-icons';
 
 const Inspire = () => {
     return (
-        <div className='bg-slate- '>
+        <div className='transition-transform transform-gpu hover:scale-105 '>
 
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 <SwiperSlide>
-                    <div className="relative rounded-md flex items-center flex-col my-20">
+                    <div className="relative  flex items-center flex-col my-10">
                         <section
                             className=" lg:w-11/12 md:w-3/4 w-4/6  lg:h-96 mx-auto relative"
                             style={{
@@ -49,9 +49,9 @@ const Inspire = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <div className="relative rounded-md flex items-center flex-col my-20">
+                    <div className="relative  flex items-center flex-col my-20">
                         <section
-                            className=" lg:w-11/12 md:w-3/4 w-4/6  lg:h-96 mx-auto relative"
+                            className=" rounded-md lg:w-11/12 md:w-3/4 w-4/6  lg:h-96 mx-auto relative"
                             style={{
                                 backgroundImage: 'url("https://i.ibb.co/s1DHRbV/HD-wallpaper-blue-white-parakeet-bird-on-white-ring-birds-budgie-bird.jpg")',
                             }}
