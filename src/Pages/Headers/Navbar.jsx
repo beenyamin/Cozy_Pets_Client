@@ -9,8 +9,8 @@ const Navbar = () => {
 
   const { user , logOut} = useAuth()
   return (
-    <Container>
-      <div className="navbar lg:px-10 max-w-screen-xl fixed bg-opacity-10 bg-white z-10 ">
+  
+      <div className="navbar   lg:px-10 max-w-screen-xl fixed bg-opacity-10 bg-black z-10 ">
 
         {/* Phone */}
         <div className="drawer md:hidden lg:hidden">
@@ -51,16 +51,7 @@ const Navbar = () => {
               >
                 Donation
               </NavLink>
-
-
-              {/* <NavLink
-                to="/borrowedBooks"
-                className={({ isActive }) =>
-                  isActive ? 'btn btn-info btn-sm dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
-                }
-              >
-                Borrowed Book
-              </NavLink> */}
+           
             </ul>
           </div>
         </div>
@@ -69,21 +60,20 @@ const Navbar = () => {
         {/* pc */}
 
         <div className="navbar-center">
-          
          < FontAwesomeIcon size={10} icon={faPaw} className=" text-sm text-black lg:ml-2 py-2 px-2 rounded-md bg-rose-500 " />
           <h2 className="text-white font-medium uppercase pl-2 mr-2"> Cozy Pets</h2>
           <div className=" md:ml-48 lg:ml-96 hidden lg:block md:block items-center space-x-5">
 
             <NavLink to="/" className={({ isActive }) =>
-              isActive ? ' text-rose-500 text-lg font-medium ' : '  dark:text-white text-white hover:text-cyan-400 '
+              isActive ? ' text-rose-600  font-semibold ' : ' dark:text-white text-white hover:text-pink-500 '
             } > Home </NavLink>
 
             <NavLink to="/petListing" className={({ isActive }) =>
-              isActive ? 'text-rose-500  font-medium ' : ' font-medium  dark:text-white text-white hover:text-cyan-400'
+              isActive ? 'text-rose-500  font-semibold ' : ' font-medium  dark:text-white text-white hover:text-pink-500'
             }>  Pet Listing </NavLink>
 
             <NavLink to="/donation" className={({ isActive }) =>
-              isActive ? 'text-rose-500  font-medium ' : ' font-medium  dark:text-white text-white hover:text-cyan-400'
+              isActive ? 'text-rose-500   font-semibold ' : ' font-medium  dark:text-white text-white hover:text-pink-500'
             }  >  Donation Campaigns </NavLink>
 
 
@@ -131,7 +121,7 @@ const Navbar = () => {
 
         {/* </div> */}
       </div>
-    </Container>
+   
   );
 };
 

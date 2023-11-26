@@ -1,6 +1,6 @@
 const Container = ({ children }) => {
     return (
-      <div className='max-w-[2420px] mx-auto'>
+      <div className=''>
         {children}
       </div>
     )

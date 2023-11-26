@@ -2,7 +2,7 @@
 
 const Donation = () => {
     return (
-        <div>
+        <div className="h-screen ">
             Donation Campaigns Page
         </div>
     );

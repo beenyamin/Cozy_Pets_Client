@@ -4,9 +4,11 @@ import ErrorPage from "../Pages/Error/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
-import PetListing from "../Pages/PetListing/PetListing";
 import Donation from "../Pages/Donation/Donation";
 import DashBoard from "../Layouts/Dashboard/DashBoard";
+import PetPage from "../Pages/PetListing/PetPage ";
+import PrivateRoutes from "./PrivateRoutes";
+import PetDetails from "../Pages/PetListing/PetDetails";
 
 
 const Routes =  createBrowserRouter([
@@ -22,8 +24,15 @@ const Routes =  createBrowserRouter([
       },
       {
         path:"/petListing",
-        element:<PetListing></PetListing>
+        element:<PetPage></PetPage>
       },
+      {
+          path: '/pet/:id',
+          element:<PrivateRoutes><PetDetails></PetDetails></PrivateRoutes>,
+          loader:({params}) => fetch (`http://localhost:5000/pet/${params.id}`)
+
+      },
+
       {
         path:"/donation",
         element:<Donation></Donation>
