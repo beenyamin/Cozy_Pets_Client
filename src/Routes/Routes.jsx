@@ -7,7 +7,6 @@ import Register from "../Pages/Register/Register";
 import Donation from "../Pages/Donation/Donation";
 import DashBoard from "../Layouts/Dashboard/DashBoard";
 import PetPage from "../Pages/PetListing/PetPage ";
-import PrivateRoutes from "./PrivateRoutes";
 import PetDetails from "../Pages/PetListing/PetDetails";
 
 
@@ -27,10 +26,9 @@ const Routes =  createBrowserRouter([
         element:<PetPage></PetPage>
       },
       {
-          path: '/pet/:id',
-          element:<PrivateRoutes><PetDetails></PetDetails></PrivateRoutes>,
-          loader:({params}) => fetch (`http://localhost:5000/pet/${params.id}`)
-
+          path: '/Pets/:id',
+          element:<PetDetails></PetDetails>,
+          loader:({params}) => fetch (`http://localhost:5000/Pets/${params.id}`)
       },
 
       {

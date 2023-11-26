@@ -8,7 +8,6 @@ const PetPage = () => {
   const [pets, setPets] = useState([]);
 
   useEffect(() => {
-    // Set pets data from the hook
     setPets(AllPets);
   }, [AllPets]);
 

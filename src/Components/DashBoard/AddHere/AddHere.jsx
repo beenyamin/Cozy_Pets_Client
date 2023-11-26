@@ -1,41 +1,49 @@
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faPaw } from '@fortawesome/free-solid-svg-icons';
+import {  useLoaderData } from "react-router-dom";
 
 
 
 
 const AddHere = () => {
-  
+    const pets = useLoaderData();
+    console.log(pets);
+    const {  name, image,age, } = pets || {};
 
     return (
        <div>
+<div className="max-w-xs mx-auto bg-white rounded-lg overflow-hidden shadow-lg">
+      <img className="w-full " src={image} alt='' />
+      <div className="px-6 py-4">
+        <h2 className="font-bold text-xl mb-2">{name}</h2>
+        <p className="text-gray-700 text-base">Type: {}</p>
+        <p className="text-gray-700 text-base">Age: {age} years</p>
+      </div>
+      <div className="px-6 py-4">
+        <h3 className="font-bold text-lg mb-2">More Details about Cozy Pets</h3>
+        <p className="text-gray-700 text-base">{}</p>
+        <button
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4"
+          onClick={() => alert(`You adopted ${name}!`)}
+        >
+          Adopt
+        </button>
+      </div>
+    </div>
+
+
+
+
+
+
+        
+    </div>
  
 
-{/* <section className="py-16 bg-slate-200 "  style={{ backgroundImage: 'url("https://i.ibb.co/ryGsxgm/pngtree.jpg")' }}>
-
-<div className="container mx-auto text-center">
-   <h2 className="text-4xl font-bold text-rose-500 mb-4">Give a Forever Home to a Furry Friend</h2>
-   <p className="text-gray-600 text-lg mb-8">
-       Embrace the joy of pet companionship. Adopt a loving friend and make a difference in their life.
-   </p>
-
-   <div className="flex justify-center items-center mb-8">
-       <FontAwesomeIcon icon={faPaw} className="text-rose-500 text-4xl mr-2" />
-       <p className="text-gray-700">Your new best friend is waiting for you!</p>
-   </div>
-
-   <button className="bg-rose-500 text-white py-2 px-6 rounded-full hover:bg-rose-700 transition duration-300">
-       Adopt Now
-   </button>
-</div>
-</section> */}
 
 
 
 
 
-       </div>
+    
     );
 };
 

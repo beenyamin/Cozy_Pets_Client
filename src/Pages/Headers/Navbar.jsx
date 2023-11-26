@@ -1,7 +1,6 @@
 import { BiLogInCircle } from "react-icons/bi";
 import { Link, NavLink } from "react-router-dom";
 import { BsList } from "react-icons/bs";
-import Container from "../../Shared/Container";
 import useAuth from "../../Hooks/useAuth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from '@fortawesome/free-solid-svg-icons';
@@ -28,7 +27,7 @@ const Navbar = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-sm btn-ghost dark:text-black text-white' : 'btn btn-ghost dark:text-black btn-sm'
+                  isActive ? 'btn btn-sm btn-ghost btn-info dark:text-black text-white' : 'btn btn-ghost dark:text-black btn-sm'
                 }
 
               >
@@ -38,7 +37,7 @@ const Navbar = () => {
               <NavLink
                 to="/petListing"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-ghost btn-sm dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
+                  isActive ? 'btn btn-ghost btn-sm btn-info dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
                 }
               >
                 Pet Listing
@@ -46,7 +45,7 @@ const Navbar = () => {
               <NavLink
                 to="/donation"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-ghost btn-sm dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
+                  isActive ? 'btn btn-ghost btn-sm btn-info dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
                 }
               >
                 Donation

@@ -9,8 +9,8 @@ const DashBoard = () => {
         <div className="flex">
         {/*  dashboard Side bar */}
         <div className="w-64 min-h-screen text-black bg-rose-400">
-<ul className="menu p-4">
-  
+ <ul className="menu p-4">
+
     <>  
     <li><NavLink to="/dashboard/adminHome"><FaHome></FaHome> Admin Home</NavLink> </li>
     <li><NavLink to="/dashboard/allPets"> <FaUtensils></FaUtensils>All Pets </NavLink> </li>

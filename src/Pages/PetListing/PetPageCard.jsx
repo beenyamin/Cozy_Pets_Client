@@ -14,9 +14,9 @@ const PetPageCard = ({ pet }) => {
           <div className="card-body items-center">
             <h2 className="card-title">Name: {name}</h2>
             <p>Location: {location}</p>
-            <p>Age: {age}</p>
+            <p>Age: {age} Years</p>
             <div className="card-actions ">
-                <Link to={`/pet/${_id}`}>
+                <Link to={`/pets/${_id}`}>
               <button className="btn btn-sm bg-rose-500 rounded-full text-white ">View Details</button>
                 </Link>
             </div>
