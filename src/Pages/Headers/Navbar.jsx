@@ -27,7 +27,7 @@ const Navbar = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-sm btn-ghost btn-info dark:text-black text-white' : 'btn btn-ghost dark:text-black btn-sm'
+                  isActive ? 'btn btn-sm   btn-error dark:text-black text-white' : 'btn btn-ghost dark:text-black btn-sm'
                 }
 
               >
@@ -37,7 +37,7 @@ const Navbar = () => {
               <NavLink
                 to="/petListing"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-ghost btn-sm btn-info dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
+                  isActive ? 'btn  btn-sm btn-error dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
                 }
               >
                 Pet Listing
@@ -45,7 +45,7 @@ const Navbar = () => {
               <NavLink
                 to="/donation"
                 className={({ isActive }) =>
-                  isActive ? 'btn btn-ghost btn-sm btn-info dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
+                  isActive ? 'btn  btn-sm  btn-error dark:text-black text-white' : 'btn dark:text-black btn-ghost btn-sm'
                 }
               >
                 Donation
@@ -103,9 +103,9 @@ const Navbar = () => {
               </label>
               <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                 <li>
-                  <a className="justify-between">{user.email}<span className="badge">New</span> </a>
+                  <a className="justify-between">{user.email} </a>
                 </li>
-                <li> <Link to='/login'>Login</Link></li>
+                <li> <Link to='/dashboard'>Dashboard</Link></li>
                <li><Link onClick={logOut}>logout</Link></li>
               </ul>
             </div>

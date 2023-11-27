@@ -15,11 +15,8 @@ const PetDetails = () => {
                 <p className="text-xl font-semibold"> <span className="text-sky-400 text-xl font-semibold ">Age :{age} </span> </p>
                 <hr />
              
-               
-
 {/* rating */}
                  <div className="flex ">
-
                     <div>
                     <p className="text-xl font-semibold"> <span className="text-sky-400 text-xl font-semibold ">Rating </span>5</p>
                     </div>
@@ -32,13 +29,8 @@ const PetDetails = () => {
                     <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
                     <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
                 </div>
-
                     </div>
-
-
                  </div>
-
-
                 <hr />
 
                 <p className=""> <span className="text-sky-400 text-xl font-semibold ">Details:</span> </p>

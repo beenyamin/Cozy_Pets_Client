@@ -8,6 +8,12 @@ import Donation from "../Pages/Donation/Donation";
 import DashBoard from "../Layouts/Dashboard/DashBoard";
 import PetPage from "../Pages/PetListing/PetPage ";
 import PetDetails from "../Pages/PetListing/PetDetails";
+import DonationDetails from "../Pages/Donation/DonationDetails";
+import AddPetsForm from "../Pages/DashBoard/User/AddPetsForm";
+import AdminHome from "../Pages/DashBoard/Admin/AdminHome";
+import AllUsers from "../Pages/DashBoard/Admin/AllUsers";
+import AllPets from "../Pages/DashBoard/Admin/AllPets";
+import AllDonation from "../Pages/DashBoard/Admin/AllDonation";
 
 
 const Routes =  createBrowserRouter([
@@ -35,6 +41,10 @@ const Routes =  createBrowserRouter([
         path:"/donation",
         element:<Donation></Donation>
       },
+      {
+        path:"/donationDetails/:id",
+        element:<DonationDetails></DonationDetails>
+      },
       
     
     ]
@@ -48,14 +58,74 @@ const Routes =  createBrowserRouter([
      path:'dashBoard',
      element:<DashBoard></DashBoard>,
      children:[
+    
+
+     //admin only routes
+
+     {
+      path:'adminHome',
+      element:<AdminHome/>
+    },
     {
-      path:'',
+      path: 'allUsers',
+      element: <AllUsers/>
+
+    },
+
+    {
+      path: 'allPets',
+      element: <AllPets/>
+
+    },
+
+    {
+      path: 'allDonations',
+      element: <AllDonation/>
+
+    },
+
+    //User Routes
+
+    {
+      path:'userHome',
       element:''
+    },
+    {
+      path:'addPets',
+      element:<AddPetsForm/>
+
+     },
+
+    {
+      path: 'myAddedPets',
+      element: ''
+
+    },
+
+    {
+      path: 'adoptionRequest',
+      element: ''
+
+    },
+    {
+      path: 'createDonation',
+      element: ''
+
+    },
+    {
+      path: 'myDonationCampaign',
+      element: ''
+
+    },
+    {
+      path: 'myDonation',
+      element: ''
+
+    },
 
 
-     }
-    ]
-    }
+
+    ]}
 
   ])
 

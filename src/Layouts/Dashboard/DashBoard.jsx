@@ -1,14 +1,13 @@
-import {  FaBook, FaCalendar, FaCartPlus, FaHome,  FaList,  FaLongArrowAltUp,  FaShoppingBag,  FaUsers,  FaUtensils,  FaWallet, } from "react-icons/fa";
+import {   FaCalendar, FaCartPlus, FaHome,  FaList,  FaLongArrowAltUp,  FaUsers,  FaUtensils,  FaWallet, } from "react-icons/fa";
 import {BiSolidCalendarStar  } from "react-icons/bi";
-import { MdEmail } from "react-icons/md";
-import { PiListDashesFill } from "react-icons/pi";
+
 import { NavLink, Outlet } from "react-router-dom";
 
 const DashBoard = () => {
     return (
-        <div className="flex">
+        <div className="flex flex-col sm:flex-row">
         {/*  dashboard Side bar */}
-        <div className="w-64 min-h-screen text-black bg-rose-400">
+        <div className="w-full md:ml-10 sm:w-56 min-h-screen text-black bg-rose-400">
  <ul className="menu p-4">
 
     <>  
@@ -20,13 +19,12 @@ const DashBoard = () => {
     </> :
     <>    
     <li><NavLink to="/dashboard/userHome"><FaHome></FaHome> User Home</NavLink> </li>
-    <li><NavLink to="/dashboard/reservation"><FaCalendar></FaCalendar> Add A Pets</NavLink> </li>
-    <li><NavLink to="/dashboard/payment"><FaWallet></FaWallet> My Added Pets</NavLink> </li>
-    <li><NavLink to="/dashboard/cart"><FaCartPlus></FaCartPlus>Adoption Request</NavLink> </li>
-    <li><NavLink to="/dashboard/review"><BiSolidCalendarStar></BiSolidCalendarStar> Create Donation Campaigns</NavLink> </li>
-    <li><NavLink to="/dashboard/review"><BiSolidCalendarStar></BiSolidCalendarStar> My Donation Campaigns</NavLink> </li>
-    <li><NavLink to="/dashboard/paymentHistory"><FaList></FaList> My Donations</NavLink> </li>              
-    
+    <li><NavLink to="/dashboard/addPets"><FaCalendar></FaCalendar> Add Pets</NavLink> </li>
+    <li><NavLink to="/dashboard/myAddedPets"><FaWallet></FaWallet> My Added Pets</NavLink> </li>
+    <li><NavLink to="/dashboard/adoptionRequest"><FaCartPlus></FaCartPlus>Adoption Request</NavLink> </li>
+    <li><NavLink to="/dashboard/createDonation"><BiSolidCalendarStar></BiSolidCalendarStar> Create Donation Campaigns</NavLink> </li>
+    <li><NavLink to="/dashboard/myDonationCampaign"><BiSolidCalendarStar></BiSolidCalendarStar> My Donation Campaigns</NavLink> </li>
+    <li><NavLink to="/dashboard/myDonation"><FaList></FaList> My Donations</NavLink> </li>                 
     </>
 
   
@@ -34,8 +32,7 @@ const DashBoard = () => {
     {/* Shared NavLink */}
     <div className="divider"></div>
     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
-    <li><NavLink to="/contact"> <MdEmail></MdEmail>Contact</NavLink> </li>
-    <li><NavLink to="/Logout"> <FaLongArrowAltUp/>Log Out</NavLink> </li>
+    <li><NavLink to="/logOut"> <FaLongArrowAltUp/>Log Out</NavLink> </li>
 
 
 </ul>

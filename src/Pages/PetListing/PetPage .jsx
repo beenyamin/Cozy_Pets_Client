@@ -16,7 +16,6 @@ const PetPage = () => {
       <Helmet>
         <title>Cozy Pets | Pet Listing</title>
       </Helmet>
-
       <div className='pt-28  text-center '>
         
       <div className="join ">
