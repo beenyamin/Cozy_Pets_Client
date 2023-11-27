@@ -13,7 +13,7 @@ const Loader = ({smallHeight}) => {
       justify-center 
       items-center `}
     >
-      <SyncLoader size={100} color='red' />
+      <SyncLoader size={20} color='red' />
     </div>
     );
 };

@@ -25,6 +25,8 @@ const Register = () => {
 
         //from utils.js Hook
         try {
+
+
             const imageData = await ImageUpload(image)
 
             const UserCreate = await createUser(email, password)
@@ -45,18 +47,21 @@ const Register = () => {
         }
     }
 
-    const handleGoogleRegister = () => {
+    const handleGoogleRegister = async () => {
 
-        signInWithGoogle()
-            .then(result => {
-                console.log(result.user)
-                toast.success(' Google Registration Successful');
-                // navigate (location?.state ? location.state : '/login' );
-            })
-            .catch(error => {
-                console.error(error)
-                toast.error('Google Registration failed. Please try again.');
-            })
+        try {
+            const GoogleRegister = await signInWithGoogle()
+            const userSaveDb = await saveUser(GoogleRegister?.user)
+            console.log(userSaveDb);
+
+            //token 
+            await getToken(GoogleRegister?.user?.email)
+            navigate('/')
+            toast.success(' SuccessFully Registration With Google')
+        
+        } catch (error) {
+            toast.error(error?.message);
+        }
     }
 
 
@@ -86,7 +91,7 @@ const Register = () => {
                                 <input
                                     type="text"
                                     name="name"
-                                    placeholder="Your Name"
+                                    placeholder="Your Full Name"
                                     className="w-full pl-10 pr-3 py-2 border rounded-md focus:outline-none focus:border-rose-500"
                                     required
                                 />

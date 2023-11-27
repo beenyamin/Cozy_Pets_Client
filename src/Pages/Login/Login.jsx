@@ -9,49 +9,51 @@ import { IoIosCloseCircle } from "react-icons/io";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 import LoginImg from '../../assets/images/Login.png'
-import { useState } from "react";
+import { getToken, saveUser } from "../../Api";
 
 
 
 const Login = () => {
-    const { signIn, signInWithGoogle, loading } = useAuth()
+    const { signIn,signInWithGoogle, loading } = useAuth()
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'
+  
+   
+    const handleLogin = async event => {
+      event.preventDefault()
+      const form = event.target
+      const email = form.email.value
+      const password = form.password.value
+  
+      try {
+     
+        const result = await signIn(email, password)
 
-    // form submit handler
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const navigate = useNavigate();
-    const location = useLocation();
-    console.log(location);
-
-
-    const handleLogin = async (e) => {
-
-        e.preventDefault();
-        const toastId = toast.loading('Logging in ...');
-
-        try {
-            await signIn(email, password);
-            toast.success('Logged in', { id: toastId });
-            navigate(location?.state ? location?.state : '/');
-
-        } catch (error) {
-            toast.error(error.message, { id: toastId });
-        }
-
+        await getToken(result?.user?.email)
+        navigate(from, { replace: true })
+        toast.success('Login Successful')
+      } catch (err) {
+        console.log(err)
+        toast.error(err?.message)
+      }
     }
-
+  
+  
     const handleGoogleLogin = async () => {
-        const toastId = toast.loading('Logging in ...');
-
         try {
-            await signInWithGoogle(email, password);
-            toast.success('Logged in', { id: toastId });
-            navigate(location?.state ? location?.state : '/');
-        } catch (error) {
-            toast.error(error.message, { id: toastId });
-        }
-    };
+            const GoogleRegistration = await signInWithGoogle()
+            const userSaveDb = await saveUser(GoogleRegistration?.user)
+            console.log(userSaveDb);
 
+            await getToken(GoogleRegistration?.user?.email)
+            navigate('/')
+            toast.success(' SuccessFully Log in With Google')
+        
+        } catch (error) {
+            toast.error(error?.message);
+        }
+    }
 
 
 
@@ -62,12 +64,11 @@ const Login = () => {
             </Helmet>
 
     <div className="flex flex-col sm:flex-row">
-        {/* Left half for the image */}
-
+       
         <div className="sm:flex-1 bg-rose-400 flex items-center justify-center">
             <img className="w-80 h-80" src={LoginImg} alt="Login" />
         </div>
-        {/* Right half for the login form */}
+       
         <div className="sm:flex-1 min-h-screen flex items-center justify-center">
             <div className="bg-white p-8 rounded-xl shadow-lg w-full md:w-96">
                 
@@ -87,7 +88,7 @@ const Login = () => {
                             placeholder="Your Email"
                             className="w-full pl-10 pr-3 py-2 border rounded-md focus:outline-none focus:border-rose-500"
                             required
-                            onBlur={(e) => setEmail(e.target.value)}
+                            
                         />
                     </div>
                     <div className="mb-6 relative">
@@ -98,7 +99,7 @@ const Login = () => {
                             placeholder="*****"
                             className="w-full pl-10 pr-3 py-2 border rounded-md focus:outline-none focus:border-rose-500"
                             required
-                            onBlur={(e) => setPassword(e.target.value)}
+                          
                         />
                     </div>
                     <button

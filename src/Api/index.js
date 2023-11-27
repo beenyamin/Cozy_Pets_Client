@@ -19,4 +19,10 @@ export const getToken = async email => {
     const { data } = await axiosSecure.post('/jwt', email)
     console.log('token from server ..!', data);
     return data
+
 }
+export const RemoveToken = async () => {
+    const { data } = await axiosSecure.get('/logout')
+    return data
+}
+

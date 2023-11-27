@@ -1,10 +1,11 @@
-import { Helmet } from 'react-helmet-async'
+
 import { useState } from 'react'
 import { ImageUpload } from '../../../Api/utils'
 import { toast } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import useAuth from '../../../Hooks/useAuth'
 import AddPetsForm from './AddPetsForm'
+import { addRoom } from '../../../Api/pets'
 
 const AddPets = () => {
 
@@ -85,10 +86,7 @@ const AddPets = () => {
 
   return (
     <div>
-      <Helmet>
-        <title>Add Room | Dashboard</title>
-      </Helmet>
-
+     
       {/* Form */}
       <AddPetsForm
         handleSubmit={handleSubmit}

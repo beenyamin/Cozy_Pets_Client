@@ -42,8 +42,9 @@ const Routes =  createBrowserRouter([
         element:<Donation></Donation>
       },
       {
-        path:"/donationDetails/:id",
-        element:<DonationDetails></DonationDetails>
+        path:"/allDonation/:id",
+        element:<DonationDetails></DonationDetails>,
+        loader:({params}) => fetch (`http://localhost:5000/allDonation/${params.id}`)
       },
       
     
