@@ -13,13 +13,13 @@ import { Helmet } from "react-helmet-async";
 
 const DashBoard = () => {
 
-    const {logOut } = useAuth()
+    const { logOut } = useAuth()
     const [role] = useRole()
     // console.log("role ", role);
 
     return (
         <div className="flex flex-col  sm:flex-row">
-               <Helmet>
+            <Helmet>
                 <title> Cozy Pets | DashBoard </title>
             </Helmet>
             {/*  dashboard Side bar */}
@@ -33,7 +33,10 @@ const DashBoard = () => {
                 <ul className="menu p-4">
 
                     {role === 'user' && <GuestMenu />}
-                    {role === 'admin' && <AdminMenu />}
+                    {role === 'admin' && (   <>  <AdminMenu />
+                            <div className="divider"></div>
+                            <GuestMenu />   </>  )}
+
 
                     {/* Shared NavLink */}
                     <div className="divider"></div>
@@ -46,7 +49,7 @@ const DashBoard = () => {
 
 
             {/* phone drawer */}
-            <div className="drawer mt-2 pb-2 shadow md:hidden lg:hidden">
+            <div className="drawer mt-2 pb-2 md:hidden lg:hidden ">
                 <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
                     {/* Page content here */}
@@ -58,12 +61,15 @@ const DashBoard = () => {
                     </div>
                 </div>
                 <div className="drawer-side">
-                    <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-48 min-h-full bg-base-200 text-base-content">
+                    <label htmlFor="my-drawer" aria-label="close sidebar" className=""></label>
+                    <ul className="menu p-4 w-48 min-h-full bg-blue-200 text-base-content">
                         {/* Sidebar content here */}
 
                         {role === 'user' && <GuestMenu />}
-                        {role === 'admin' && <AdminMenu />}
+                    {role === 'admin' && (   <>  <AdminMenu />
+                    <div className="divider"></div>
+                            <GuestMenu />   </>  )}
+                     
 
                         {/* Shared NavLink */}
                         <div className="divider"></div>

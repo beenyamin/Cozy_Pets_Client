@@ -1,47 +1,44 @@
 import { Link, useLoaderData } from "react-router-dom";
-import useStyledButton from "../../Hooks/useStyledButton";
-import AnotherComponents from "../../Components/AnotherComponents";
+
 
 
 const PetDetails = () => {
-    const buttonStyles = useStyledButton();
     const pets = useLoaderData();
-    const { _id, age, name, image } = pets;
+    const { _id, age, name, image,location,longDescription } = pets;
 
     return (
         <div>
-        <div className="hero space-y-5 rounded-lg   min-h-screen bg-base-200">
-            <div className="hero-content flex-col  lg:flex-row">
-                <img src={image} className=" w-96 lg:mr-24 rounded-lg shadow-2xl" />
-                <div>
-                    <h1 className="text-5xl mb-5 font-bold ">{name}</h1>
-                    <hr />
-                    <p className="text-xl font-semibold"> <span className="text-sky-400 text-xl font-semibold ">Age :{age} </span> </p>
-                    <hr />
+       <div className="pt-14">
 
-                    {/* rating */}
-                    <div className="flex ">
-                        <div>
-                            <p className="text-xl font-semibold"> <span className="text-sky-400 text-xl font-semibold ">Rating </span>5</p>
-                        </div>
+<div className="hero space-y-5 mt-8 rounded-lg  min-h-screen bg-base-200">
+    <div className="hero-content flex-col md:flex-row">
+        <img src={image} className=" w-96 md:mr-10 rounded-lg shadow-2xl" />
+        <div>
+            <h1 className="text-5xl mb-5 font-bold ">{name}</h1>
+            <hr />
+            <p className="text-xl font-semibold"> <span className="text-rose-500 text-xl font-semibold ">Pets : </span> {name}</p>
+            <hr />
+            <p className="text-xl font-semibold"> <span className="text-rose-500 text-xl font-semibold "> Pets Age : </span> {age}</p>
+            <hr />
+            <p className="text-xl font-semibold"> <span className="text-rose-500 text-xl font-semibold "> Location: </span> {location}</p>
+            <hr />
+            <p className=""> <span className="text-rose-500 text-xl font-semibold "> About This Pets :</span> {longDescription}</p>
+            <hr />
 
-                    </div>
-                    <hr />
-                    <p className="mb-4"> <span className="text-sky-400 text-xl font-semibold ">Details:</span> </p>
+            <Link><button className=" text-white rounded-lg py-2 mt-4 ml-2 font-medium  px-4 bg-rose-500 hover:bg-sky-500 ...">Adopt</button></Link>
 
-
-                    <button {...buttonStyles}>
-                        Adopt
-                    </button>
-
-
-                </div>
-            </div>
-          
-           
         </div>
+    </div>
+</div>
 
-        <AnotherComponents></AnotherComponents>
+
+
+
+
+
+</div>
+
+    
         </div>
     );
 };

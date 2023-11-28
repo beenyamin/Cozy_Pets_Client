@@ -16,36 +16,37 @@ const Register = () => {
     const { createUser, updateUserProfile, signInWithGoogle,loading } = useAuth();
     const navigate = useNavigate()
     const handleSubmit = async (event) => {
-        event.preventDefault()
-        const form = event.target
-        const name = form.name.value
-        const email = form.email.value
-        const password = form.password.value
-        const image = form.image.files[0]
-
-        //from utils.js Hook
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const image = form.image.files[0];
+    
+        // Password length check
+        if (password.length < 6) {
+            toast.error('Password should be at least 6 characters!');
+            return;
+        } else if (!/(?=.*[A-Z])(?=.*[_.!@$*=-?#])/.test(password)) {
+            toast.error("Password Must Be One Uppercase & One Special character");
+            return;
+        }   
         try {
-
-
-            const imageData = await ImageUpload(image)
-
-            const UserCreate = await createUser(email, password)
-
-            await updateUserProfile(name, imageData?.data?.display_url)
+            const imageData = await ImageUpload(image);
+            const UserCreate = await createUser(email, password);
+            await updateUserProfile(name, imageData?.data?.display_url);
             console.log(UserCreate);
-
-            const userSaveDb = await saveUser(UserCreate?.user)
+            const userSaveDb = await saveUser(UserCreate?.user);
             console.log(userSaveDb);
-
             //token 
-            await getToken(UserCreate?.user?.email)
-            navigate('/')
-            toast.success('Registration SuccessFul')
-        
+            await getToken(UserCreate?.user?.email);
+            navigate('/');
+            toast.success('Registration Successful');
         } catch (error) {
             toast.error(error?.message);
         }
     }
+    
 
     const handleGoogleRegister = async () => {
 

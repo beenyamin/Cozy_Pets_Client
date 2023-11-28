@@ -1,9 +1,9 @@
 import axiosSecure from "./Auth"
 
 
-// Fetch all rooms from db
+// Fetch all pets from db
 export const getAllRooms = async () => {
-  const { data } = await axiosSecure('/rooms')
+  const { data } = await axiosSecure('/getPets')
   return data
 }
 

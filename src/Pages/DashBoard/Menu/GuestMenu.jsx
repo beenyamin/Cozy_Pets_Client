@@ -1,4 +1,4 @@
-import { FaHome, } from "react-icons/fa";
+
 import { BiSolidCalendarStar, BiSolidDonateHeart } from "react-icons/bi";
 import { GiRabbit } from "react-icons/gi";
 import { MdPets, MdOutlineCampaign } from "react-icons/md";
@@ -10,7 +10,6 @@ const GuestMenu = () => {
         <div>
 
             <>
-                <li><NavLink to="/dashboard/userHome"><FaHome></FaHome> User Home</NavLink> </li>
                 <li><NavLink to="/dashboard/addPets"><MdPets /> Add Pets</NavLink> </li>
                 <li><NavLink to="/dashboard/myAddedPets"><GiRabbit /> My Added Pets</NavLink> </li>
                 <li><NavLink to="/dashboard/adoptionRequest"><SiPetsathome />Adoption Request</NavLink> </li>
