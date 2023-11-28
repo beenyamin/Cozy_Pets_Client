@@ -1,4 +1,5 @@
-import axiosSecure from '.'
+import axiosSecure from "./Auth"
+
 
 // Fetch all rooms from db
 export const getAllRooms = async () => {
@@ -18,8 +19,8 @@ export const getRoom = async id => {
   return data
 }
 
-// Save a room data in db
-export const addRoom = async roomData => {
-  const { data } = await axiosSecure.post(`/rooms`, roomData)
+// Save a pet data in db
+export const addPets = async petsData => {
+  const { data } = await axiosSecure.post(`/addPets`, petsData)
   return data
 }

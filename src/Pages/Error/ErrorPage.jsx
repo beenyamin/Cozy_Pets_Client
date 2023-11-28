@@ -44,9 +44,9 @@ const ErrorPage = () => {
                 </svg>
   
                 <span>Go Home</span>
-              </button>
+              </button >
   
-              <button label={'Go Home'} onClick={() => navigate('/')} />
+              <button className="" label={'Go Home'} onClick={() => navigate('/')} />
             </div>
           </div>
         </div>

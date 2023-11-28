@@ -4,7 +4,7 @@ import axiosSecure from "./Auth"
 export const saveUser = async user => {
     const currentUser ={
         email:user.email,
-        role:'guest',
+        role:'user',
         status:'Verified',
     }
 
@@ -26,3 +26,9 @@ export const RemoveToken = async () => {
     return data
 }
 
+
+// Get user role
+export const getRole = async email => {
+  const { data } = await axiosSecure(`/user/${email}`)
+  return data.role
+}

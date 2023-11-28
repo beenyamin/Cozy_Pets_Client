@@ -14,6 +14,8 @@ import AdminHome from "../Pages/DashBoard/Admin/AdminHome";
 import AllUsers from "../Pages/DashBoard/Admin/AllUsers";
 import AllPets from "../Pages/DashBoard/Admin/AllPets";
 import AllDonation from "../Pages/DashBoard/Admin/AllDonation";
+import MyAddedPets from "../Pages/DashBoard/User/MyAddedPets";
+import AdminRoute from "./AdminRoute";
 
 
 const Routes =  createBrowserRouter([
@@ -65,23 +67,23 @@ const Routes =  createBrowserRouter([
 
      {
       path:'adminHome',
-      element:<AdminHome/>
+      element: <AdminRoute><AdminHome/></AdminRoute>
     },
     {
       path: 'allUsers',
-      element: <AllUsers/>
+      element:  <AdminRoute><AllUsers/></AdminRoute>
 
     },
 
     {
       path: 'allPets',
-      element: <AllPets/>
+      element:  <AdminRoute><AllPets/></AdminRoute>
 
     },
 
     {
       path: 'allDonations',
-      element: <AllDonation/>
+      element:<AdminRoute><AllDonation/></AdminRoute>
 
     },
 
@@ -99,7 +101,7 @@ const Routes =  createBrowserRouter([
 
     {
       path: 'myAddedPets',
-      element: ''
+      element: <MyAddedPets></MyAddedPets>
 
     },
 
