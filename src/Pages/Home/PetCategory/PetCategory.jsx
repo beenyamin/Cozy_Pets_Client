@@ -26,7 +26,7 @@ const PetCategory = () => {
 
             {/* card */}
            
-                <div className="pt-6 ml-16 lg:ml-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-5 md:px-16  lg:grid-cols-3 xl:grid-cols-5 ">          
+                <div className="pt-6 ml-20 lg:ml-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-5 md:px-16  lg:grid-cols-3 xl:grid-cols-5 ">          
         <Link className='col-span-1 transition-transform transform-gpu hover:scale-105 hover:border-2 hover:border-rose-500  w-60 h-64  shadow-lg   rounded-lg cursor-pointer group rounded-xl'>
                 <div className=' pb-6  relative overflow-hidden rounded-xl'>
                     <img className='object-cover group-hover:scale-110 transition'

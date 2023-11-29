@@ -39,7 +39,7 @@ const DonationModal = ({ closeModal, isOpen }) => {
             toast.success('Donation successful !');
             navigate('/dashboard/myDonation')
           } else {
-            toast.error('Failed to add pet. Please try again.');
+            toast.error('Failed to Donate pet. Please try again.');
           }
   
   

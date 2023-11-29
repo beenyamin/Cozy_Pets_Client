@@ -1,14 +1,13 @@
 import { useLoaderData } from "react-router-dom";
-
 import { useState } from "react";
 import DonationModal from "../../Components/Modal/DonationModal";
-import useAuth from "../../Hooks/useAuth";
+
 
 
 const DonationDetails = () => {
   const Donations = useLoaderData(); 
-  const {user} = useAuth () 
-  const  { _id, petName,  petImage, donatedAmount ,description} = Donations;
+
+  const  {  petName,  petImage, donatedAmount ,description} = Donations;
   const [isOpen, setIsOpen] = useState(false)
 
   const closeModal = () => {

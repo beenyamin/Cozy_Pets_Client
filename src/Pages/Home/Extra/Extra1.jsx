@@ -18,7 +18,7 @@ const Extra1 = () => {
 
             
             {/* card */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 mt-5 pl-14 lg:pl-16 gap-5 md:px-20 ">
+        <div className="grid md:grid-cols-2 ml-14 md:ml-0 lg:grid-cols-4 grid-cols-1 mt-5 pl-14 lg:pl-16 gap-5 md:px-20 ">
           
             <div className="card w-48 h-56 bg-base-100 shadow-xl  transition-transform transform-gpu hover:scale-105">
                 <figure className="pt-8">
