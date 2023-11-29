@@ -1,6 +1,6 @@
 
 import { useQuery } from "@tanstack/react-query";
-import { FaTrashAlt, FaUsers } from "react-icons/fa";
+import { FaTrashAlt, } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { Helmet } from "react-helmet-async";
@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet-async";
 
 const AllUsers = () => {
     const axiosSecure = useAxiosPublic();
+
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {

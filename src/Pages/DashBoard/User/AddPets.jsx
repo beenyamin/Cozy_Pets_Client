@@ -49,11 +49,6 @@ const AddPets = () => {
 
       })
 
-     
-      
-
-
-
 
 
   }
@@ -111,6 +106,7 @@ const AddPets = () => {
                 <span className="label-text">Pets Category</span>
               </label>
               <select
+              defaultValue="default"
                 name="category"
                 className="input input-bordered w-full rounded-md focus:rose-300  text-gray-800  border border-rose-300 focus:outline-rose-500"
               >
@@ -119,6 +115,8 @@ const AddPets = () => {
                 <option>Cats</option>
                 <option>Rabbit</option>
                 <option>Birds</option>
+                <option>Fish</option>
+                <option>Hamsters</option>
               </select>
             </div>
 

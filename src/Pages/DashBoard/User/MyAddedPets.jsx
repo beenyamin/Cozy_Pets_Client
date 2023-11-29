@@ -1,21 +1,19 @@
-// import Swal from "sweetalert2";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useGetPets from "../../../Hooks/useGetPets";
 import { useEffect, useState } from "react";
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { FaPaw, FaTrashAlt } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-// import { FaTrashAlt } from "react-icons/fa";
+import Swal from "sweetalert2";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import { Link } from "react-router-dom";
 
 
 const MyAddedPets = () => {
-
+    const axiosPublic = useAxiosPublic();
     const [getAllPets] = useGetPets();
     const [userPets, setUserPets] = useState([]);
-
-    // useEffect(() => {
-    //     setUserPets(getAllPets);
-    // }, [getAllPets]);
 
     useEffect(() => {
         if (JSON.stringify(getAllPets) !== JSON.stringify(userPets)) {
@@ -23,7 +21,7 @@ const MyAddedPets = () => {
         }
       }, [getAllPets, userPets]);
 
-    const handleDelete = id => {
+      const handleDelete = (id) => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -31,27 +29,29 @@ const MyAddedPets = () => {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
+            confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosPublic.delete(`/carts/${id}`)
-                    .then(res => {
+                axiosPublic.delete(`/pets/${id}`)
+                    .then((res) => {
                         if (res.data.deletedCount > 0) {
-                            // refetch ();
+                            // refetch();
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Your file has been deleted.",
-                                icon: "success"
-
+                                icon: "success",
                             });
                         }
-
                     })
-
+                    .finally(() => {
+                        // Move refetch outside of the axios block
+                      
+                    });
             }
+    
+            
         });
-
-    }
+    };
 
 
 
@@ -105,8 +105,10 @@ const MyAddedPets = () => {
                                 </td>
                                 <td>{pets.name}  </td>
                                 <td>{pets.category}</td>
-                                <th> <button className="btn btn-ghost text-white btn-sm bg-red-600"><FontAwesomeIcon icon={faPenToSquare} /></button>
 
+                                <th> <Link to={`/dashBoard/updatePets/${pets._id}`}>
+                                <button className="btn btn-ghost text-white btn-sm bg-red-600"><FontAwesomeIcon icon={faPenToSquare} /></button>
+                                </Link>
                                 </th>
                                 <th> <button onClick={() => handleDelete(pets._id)} className="btn btn-ghost text-white btn-sm bg-red-600"><FaTrashAlt /></button>
 
