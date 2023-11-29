@@ -1,14 +1,20 @@
 import { useLoaderData } from "react-router-dom";
-import AnotherComponents from "../../Components/AnotherComponents";
+
+import { useState } from "react";
+import DonationModal from "../../Components/Modal/DonationModal";
+import useAuth from "../../Hooks/useAuth";
+
 
 const DonationDetails = () => {
+  const Donations = useLoaderData(); 
+  const {user} = useAuth () 
+  const  { _id, petName,  petImage, donatedAmount ,description} = Donations;
+  const [isOpen, setIsOpen] = useState(false)
 
-    const Donations = useLoaderData();    
-    const  { _id, petName,  petImage, maxDonationAmount, donatedAmount ,description} = Donations;
+  const closeModal = () => {
+    setIsOpen(false)
+  }
 
-   const handleAddToDonation = () => {
-
-   }
 
     return (
 
@@ -47,9 +53,7 @@ const DonationDetails = () => {
         <div className="flex pt-6">
           <span className="title-font font-medium text-2xl text-gray-900">${donatedAmount}.00</span>
          
-          <button onClick={handleAddToDonation} className="flex ml-auto text-white bg-rose-500 border-0 py-2 px-6 focus:outline-none hover:bg-rose-600 rounded-full">Donate Now</button>
-        
-        
+          <button onClick={() => setIsOpen (true)} className="flex ml-auto text-white bg-rose-500 border-0 py-2 px-4 focus:outline-none hover:bg-rose-600 rounded-full">Donate Now</button>
         
         
           <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
@@ -62,14 +66,17 @@ const DonationDetails = () => {
     </div>
   </div>
 
-  <AnotherComponents
+
+<DonationModal closeModal={closeModal} isOpen={isOpen} />
+
+  {/* <AnotherComponents
         _id={_id}
         petName={petName}
         petImage={petImage}
         maxDonationAmount={maxDonationAmount}
         donatedAmount={donatedAmount}
         description={description}
-      />
+      /> */}
 
 
 </section>

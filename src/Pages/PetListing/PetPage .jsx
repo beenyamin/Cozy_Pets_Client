@@ -1,16 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 import useAllPets from '../../Hooks/useAllPets';
 import PetPageCard from './PetPageCard';
-import { useState, useEffect } from 'react';
 
 const PetPage = () => {
   const [AllPets] = useAllPets();
-  const [pets, setPets] = useState([]);
-
-  useEffect(() => {
-    setPets(AllPets);
-  }, [AllPets]);
-
+  // console.log(AllPets);
+  
   return (
     <div className=''>
       <Helmet>
@@ -39,7 +34,7 @@ const PetPage = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
-        {pets.map((pet) => (
+        {AllPets.map((pet) => (
           <PetPageCard key={pet._id} pet={pet} />
         ))}
       </div>
