@@ -24,7 +24,7 @@ const DonationModal = ({ closeModal, isOpen }) => {
     const donationDetails = {name , email, donateAmount }
     console.log(donationDetails);
 
-    fetch('http://localhost:5000/singleDonation', {
+    fetch(' https://a12-server-zeta.vercel.app/singleDonation', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'

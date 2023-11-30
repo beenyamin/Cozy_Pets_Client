@@ -18,25 +18,6 @@ const AllUsers = () => {
         }
     })
 
-    // const handleMakeAdmin = user => {
-    //     axiosSecure.patch(`/users/admin/${user._id}`)
-    //         .then(res => {
-    //             console.log(res.data);
-    //             if (res.data.modifiedCount > 0) {
-    //                 refetch()
-    //                 Swal.fire({
-    //                     position: "top-end",
-    //                     icon: "success",
-    //                     title: `${user.name} 'is An admin Now'`,
-    //                     showConfirmButton: false,
-    //                     timer: 1500
-    //                 });
-    //             }
-
-    //         })
-
-    // }
-
 
 
     const handleDeleteUser = user => {
@@ -78,10 +59,9 @@ const AllUsers = () => {
              <Helmet>
                 <title> Cozy Pets | All User </title>
             </Helmet>
-            <div className="flex justify-evenly my-4 ">
-                <h2 className="text-3xl">All Users</h2>
-                <h2 className="text-3xl">Total Users: {users.length}</h2>
-            </div>
+           
+
+            <h2 className="text-2xl font-bold text-center mb-6" > Total Users: {users.length}</h2>
 
             <div className="overflow-x-auto">
                 <table className="table table-zebra">

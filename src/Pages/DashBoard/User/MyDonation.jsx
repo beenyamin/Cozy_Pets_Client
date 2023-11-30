@@ -13,8 +13,6 @@ const MyDonation = () => {
 
     console.log(getSingleDonation);
 
- 
-
       const handleDelete = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -38,7 +36,7 @@ const MyDonation = () => {
                         }
                     })
                     .finally(() => {
-                        // Move refetch outside of the axios block
+                      
                       
                     });
             }

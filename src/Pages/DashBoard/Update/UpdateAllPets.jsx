@@ -28,7 +28,7 @@ const UpdateAllPets = () => {
     const updatePets = { name, image, location, category, date, shortDescription, age, longDescription }
     console.log(updatePets);
 
-  axios.patch(`http://localhost:5000/getPets/${pets._id}`, updatePets, {
+  axios.patch(` https://a12-server-zeta.vercel.app/getPets/${pets._id}`, updatePets, {
   headers: {
     'Content-Type': 'application/json',
   },

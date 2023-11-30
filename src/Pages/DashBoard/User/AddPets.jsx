@@ -26,7 +26,7 @@ const AddPets = () => {
     const addPets = { name, image, location, category, date, shortDescription, age, longDescription }
     console.log(addPets);
 
-    fetch('http://localhost:5000/addPets', {
+    fetch(' https://a12-server-zeta.vercel.app/addPets', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

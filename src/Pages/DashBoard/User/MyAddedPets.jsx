@@ -61,7 +61,7 @@ const MyAddedPets = () => {
                 <title> DashBoard | My Added Pets </title>
             </Helmet>
             <div className="flex mb-4 justify-center">
-                <h2 className="text-3xl font-semibold">Total Pets :{getAllPets.length}</h2>
+                <h2 className="text-3xl font-semibold">My Added Pets :{getAllPets.length}</h2>
 
             </div>
             <div className="overflow-x-auto rounded-t-xl ">

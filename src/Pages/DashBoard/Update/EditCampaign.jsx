@@ -22,7 +22,7 @@ const EditCampaign = () => {
     const longDescription = form.longDescription.value
     const editCampaign = { name, image,date, shortDescription, longDescription ,amount}
 
-  axios.patch(`http://localhost:5000/campaign/${campaign._id}`, editCampaign, {
+  axios.patch(` https://a12-server-zeta.vercel.app/campaign/${campaign._id}`, editCampaign, {
   headers: {
     'Content-Type': 'application/json',
   },

@@ -40,7 +40,7 @@ const MyDonationCampaign = () => {
                   {index + 1}
                 </th>
                 <td>{campaign.name}</td>
-                <td>{campaign.amount}</td>
+                <td>${campaign.amount}</td>
                 <td> <Link to={`/dashBoard/editCampaign/${campaign._id}`}><button className="btn btn-ghost text-white btn-sm bg-red-600"><FontAwesomeIcon icon={faFilePen} /></button> </Link></td>
                 
                 <td> 

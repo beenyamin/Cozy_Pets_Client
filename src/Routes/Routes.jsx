@@ -44,7 +44,7 @@ const Routes = createBrowserRouter([
       {
         path: '/Pets/:id',
         element: <PetDetails></PetDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/Pets/${params.id}`)
+        loader: ({ params }) => fetch(` https://a12-server-zeta.vercel.app/Pets/${params.id}`)
       },
 
       {
@@ -54,7 +54,7 @@ const Routes = createBrowserRouter([
       {
         path: "/allDonation/:id",
         element: <DonationDetails></DonationDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/allDonation/${params.id}`)
+        loader: ({ params }) => fetch(` https://a12-server-zeta.vercel.app/allDonation/${params.id}`)
       },
 
 
@@ -100,7 +100,7 @@ const Routes = createBrowserRouter([
       {
         path: 'updatePets/:id',
         element: <PrivateRoutes> <UpdateAllPets/></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/getPets/${params.id}`)
+        loader: ({ params }) => fetch(` https://a12-server-zeta.vercel.app/getPets/${params.id}`)
 
       },
 
@@ -124,7 +124,7 @@ const Routes = createBrowserRouter([
     {
       path: 'editCampaign/:id',
       element: <PrivateRoutes> <EditCampaign/></PrivateRoutes>,
-      loader: ({ params }) => fetch(`http://localhost:5000/campaign/${params.id}`)
+      loader: ({ params }) => fetch(` https://a12-server-zeta.vercel.app/campaign/${params.id}`)
       
     },
 

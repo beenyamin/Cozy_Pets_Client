@@ -17,7 +17,7 @@ const PetPage = () => {
 
 
 useEffect( () => {
-  fetch(`http://localhost:5000/Pets?search=${search}`)
+  fetch(` https://a12-server-zeta.vercel.app/Pets?search=${search}`)
   .then (res => res.json ())
   .then (data => {
     console.log(data);
