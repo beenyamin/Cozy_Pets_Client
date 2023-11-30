@@ -41,7 +41,7 @@ const MyDonationCampaign = () => {
                 </th>
                 <td>{campaign.name}</td>
                 <td>{campaign.amount}</td>
-                <td> <Link to={`/dashBoard/updatePets/${campaign._id}`}><button className="btn btn-ghost text-white btn-sm bg-red-600"><FontAwesomeIcon icon={faFilePen} /></button> </Link></td>
+                <td> <Link to={`/dashBoard/editCampaign/${campaign._id}`}><button className="btn btn-ghost text-white btn-sm bg-red-600"><FontAwesomeIcon icon={faFilePen} /></button> </Link></td>
                 
                 <td> 
                   <button className="btn btn-ghost text-white btn-sm bg-red-600"><FontAwesomeIcon icon={faCirclePause} /></button></td>

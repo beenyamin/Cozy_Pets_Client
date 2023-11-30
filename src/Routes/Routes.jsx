@@ -23,6 +23,7 @@ import MyDonationCampaign from "../Pages/DashBoard/User/MyDonationCampaign";
 import MyDonation from "../Pages/DashBoard/User/MyDonation";
 import PrivateRoutes from "./PrivateRoutes";
 import UpdateAllPets from "../Pages/DashBoard/Update/UpdateAllPets";
+import EditCampaign from "../Pages/DashBoard/Update/EditCampaign";
 
 
 const Routes = createBrowserRouter([
@@ -119,6 +120,15 @@ const Routes = createBrowserRouter([
         element: <PrivateRoutes><CreateDonation /></PrivateRoutes>
 
       },
+
+    {
+      path: 'editCampaign/:id',
+      element: <PrivateRoutes> <EditCampaign/></PrivateRoutes>,
+      loader: ({ params }) => fetch(`http://localhost:5000/campaign/${params.id}`)
+      
+    },
+
+
       {
         path: 'myDonationCampaign',
         element: <PrivateRoutes><MyDonationCampaign /> </PrivateRoutes>
