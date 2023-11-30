@@ -40,7 +40,6 @@ const AllDonation = () => {
             }
         });
 
-
     }
 
     return (

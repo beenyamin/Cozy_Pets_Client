@@ -15,13 +15,13 @@ const MyDonation = () => {
 
       const handleDelete = (id) => {
         Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
+            title: "Are you sure ?",
+            text: "You want to Refund!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!",
+            confirmButtonText: "Yes, Refund it!",
         }).then((result) => {
             if (result.isConfirmed) {
                 axiosPublic.delete(`/pets/${id}`)
@@ -59,7 +59,7 @@ const MyDonation = () => {
                     <thead className="bg-rose-500 text-white">
                         <tr>
                             <th>Num</th>
-                            <th>Pet Image</th>
+                            <th>Donor Mail</th>
                             <th>Donor</th>
                             <th>Refund</th>
                           
@@ -75,11 +75,7 @@ const MyDonation = () => {
                                 </th>
                                 <td>
                                     <div className="flex items-center gap-3">
-                                        <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
-                                                <img src={getAllPets.image} alt="Avatar Tailwind CSS Component" />
-                                            </div>
-                                        </div>
+                                    <td>{oneDonation.email}  </td>
                                     </div>
                                 </td>
                                 <td>{oneDonation.name}  </td>
