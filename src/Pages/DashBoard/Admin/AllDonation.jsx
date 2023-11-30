@@ -8,8 +8,9 @@ const AllDonation = () => {
                 <title> Cozy Pets | All Donation </title>
             </Helmet>
             All Donation
+          
         </div>
     );
 };
 
-export default AllDonation;
+export default AllDonation; 

@@ -3,7 +3,6 @@
 // import { useNavigate } from 'react-router-dom'
 
 import { ImSpinner } from "react-icons/im";
-import useAuth from "../../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -11,7 +10,6 @@ import { Helmet } from "react-helmet-async";
 
 const AddPets = () => {
 
-  const { loading } = useAuth()
   const navigate = useNavigate ()
 
   const handleAddPets = e => {
@@ -72,7 +70,7 @@ const AddPets = () => {
        <Helmet>
                 <title> DashBoard | Add Pets </title>
             </Helmet>
-      <div className="shadow-md bg-slate-100 rounded-md mt-6 mb-10 px-6 md:px-12 lg:px-24 py-10">
+      <div className="shadow-md bg-stone-100 rounded-md mt-6 mb-10 px-6 md:px-12 lg:px-24 py-10">
         <h2 className="text-3xl text-center dark:text-black justify-center mb-3 font-extrabold">Add Pets</h2>
         <form onSubmit={handleAddPets}>
 
@@ -88,7 +86,7 @@ const AddPets = () => {
 
             <div className="form-control mb-4">
               <label className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text">Pet Name</span>
               </label>
               <input type="text" name="name" placeholder="Pets Name" className="input input-bordered w-full rounded-md focus:rose-300  text-gray-800  border border-rose-300 focus:outline-rose-500" />
             </div>
@@ -145,19 +143,12 @@ const AddPets = () => {
               <label className="label">
                 <span className="label-text">Long Description</span>
               </label>
-              <textarea className="textarea textarea-error" name="longDescription" placeholder="Short Description" ></textarea>
+              <textarea className="textarea textarea-error" name="longDescription" placeholder="Long Description" ></textarea>
             </div>
 
           </div>
-
-          {loading ? (
-            < ImSpinner className='animate-spin m-auto' />
-          ) : (
+        
             <input type="submit" value="Add Pets" className="btn btn-error w-full text-white mt-4" />
-          )}
-
-
-
         </form>
       </div>
 

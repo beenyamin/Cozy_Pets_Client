@@ -7,8 +7,8 @@ const DonationPageCard = ({donation}) => {
 
     return (
         
-      <div className='mt-14 mb-10 max-w-5xl mx-auto'>
-       <div className="max-w-sm rounded-lg overflow-hidden shadow-lg m-4">
+      <div className='mt-14 mb-10 max-w-5xl mx-auto transition-transform transform-gpu hover:scale-105'>
+       <div className="max-w-sm rounded-xl overflow-hidden shadow-lg m-4">
       <img src={petImage} alt={petName} className="w-full h-48 object-cover" />
 
       <div className="px-6 text-center py-4">
@@ -21,7 +21,7 @@ const DonationPageCard = ({donation}) => {
         </p>
 
        <Link to={`/allDonation/${_id}`}>
-       <button  className="bg-rose-500 btn btn-sm hover:bg-blue-700 text-white font-medium  rounded-full">
+       <button  className="bg-rose-500 btn btn-sm  text-white font-medium  rounded-full">
           View Details
         </button>
        </Link>

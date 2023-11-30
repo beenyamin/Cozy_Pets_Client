@@ -7,6 +7,7 @@ export const getAllRooms = async () => {
 }
 
 
+
 // Save a pet data in db
 export const addPets = async petsData => {
   const { data } = await axiosSecure.post(`/addPets`, petsData)

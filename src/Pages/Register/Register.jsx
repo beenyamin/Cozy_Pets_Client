@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { FaUserCheck } from "react-icons/fa";
+import { FaUserCheck ,FaGithub} from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { IoIosCloseCircle } from "react-icons/io";
 import { MdMarkEmailRead } from "react-icons/md";
@@ -15,6 +15,10 @@ import { getToken, saveUser } from "../../Api";
 const Register = () => {
     const { createUser, updateUserProfile, signInWithGoogle,loading } = useAuth();
     const navigate = useNavigate()
+
+    
+
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         const form = event.target;
@@ -74,14 +78,14 @@ const Register = () => {
 
             <div className="flex flex-col sm:flex-row">
                 {/* Left half for the image */}
-                <div className="sm:flex-1 bg-rose-400 flex items-center justify-center">
+                <div className="sm:flex-1 bg-rose-500 flex items-center justify-center">
                     <img className="w-80 h-80" src={RegisterImg} alt="Login" />
                 </div>
 
                 {/* Right half for the login form */}
                 <div className="sm:flex-1 min-h-screen flex items-center justify-center">
                     <div className="bg-white p-8 rounded-xl shadow-lg w-full md:w-96">
-                        <Link to='/'><button className="absolute hidden btn-sm rounded-full lg:block top-5 right-14 m-4 bg-rose-400 text-white   hover:bg-rose-600 focus:outline-none focus:ring focus:border-blue-300">
+                        <Link to='/'><button className="absolute hidden btn-sm rounded-full lg:block top-5 right-14 m-4 bg-rose-500 text-white   hover:bg-rose-600 focus:outline-none focus:ring focus:border-blue-300">
                             <IoIosCloseCircle size={15} />
                         </button></Link>
                         <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
@@ -128,7 +132,7 @@ const Register = () => {
                                     accept='image/*' />
                             </div>
                         
-                            <button type="submit" className="w-full font-medium bg-rose-400 text-white py-2 rounded-md hover:bg-rose-600 focus:outline-none focus:ring focus:border-blue-300" >
+                            <button type="submit" className="w-full font-medium bg-rose-500 text-white py-2 rounded-md hover:bg-rose-600 focus:outline-none focus:ring focus:border-blue-300" >
                                
                                  {loading ? (
                                 < ImSpinner className='animate-spin m-auto' />
@@ -143,11 +147,15 @@ const Register = () => {
                                 className='flex justify-center items-center space-x-2 border  m-2 p-2 border-gray-300 border-rounded cursor-pointer' >
                                 <FcGoogle size={20} />
                                 <p>  Google</p>
-
                             </div>
+                            <div className='flex justify-center items-center space-x-2 border  m-2 p-2 border-gray-300 border-rounded cursor-pointer'>                   
+                        < FaGithub  size={20} />
+                        <p> GitHub</p>
+                    </div>
+
                             <p className='px-6 text-sm text-center text-gray-400'>
                                 Already have an account ?{' '}
-                                <Link to='/login' className='hover:underline text-rose-400 hover:text-rose-500'>  Login
+                                <Link to='/login' className='hover:underline text-rose-500 hover:text-rose-700'>  Login
                                 </Link>
 
                             </p>

@@ -2,6 +2,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { ImSpinner } from "react-icons/im";
 import { MdMarkEmailRead } from "react-icons/md";
@@ -65,14 +66,14 @@ const Login = () => {
 
     <div className="flex flex-col sm:flex-row">
        
-        <div className="sm:flex-1 bg-rose-400 flex items-center justify-center">
+        <div className="sm:flex-1 bg-rose-500 flex items-center justify-center">
             <img className="w-80 h-80" src={LoginImg} alt="Login" />
         </div>
        
         <div className="sm:flex-1 min-h-screen flex items-center justify-center">
             <div className="bg-white p-8 rounded-xl shadow-lg w-full md:w-96">
                 
-            <Link to='/'><button className="absolute hidden btn-sm rounded-full lg:block top-3 right-14 m-4 bg-rose-400 text-white   hover:bg-rose-600 focus:outline-none focus:ring focus:border-blue-300">
+            <Link to='/'><button className="absolute hidden btn-sm rounded-full lg:block top-3 right-14 m-4 bg-rose-500 text-white   hover:bg-rose-600 focus:outline-none focus:ring focus:border-blue-300">
              <IoIosCloseCircle size={15}/>
            </button></Link>
 
@@ -86,7 +87,7 @@ const Login = () => {
                             type="text"
                             name="email"
                             placeholder="Your Email"
-                            className="w-full pl-10 pr-3 py-2 border rounded-md focus:outline-none focus:border-rose-500"
+                            className="w-full pl-10 pr-3 py-2 border rounded-md focus:outline-none focus:border-rose-700"
                             required
                             
                         />
@@ -103,7 +104,7 @@ const Login = () => {
                         />
                     </div>
                     <button
-                        type="submit" className="w-full bg-rose-400 text-white py-2 rounded-md hover:bg-rose-600 focus:outline-none focus:ring focus:border-blue-300" >
+                        type="submit" className="w-full bg-rose-500 text-white py-2 rounded-md hover:bg-rose-600 focus:outline-none focus:ring focus:border-blue-300" >
                        {loading ? (
                                 < ImSpinner className='animate-spin m-auto' />
                               ) : (
@@ -121,12 +122,16 @@ const Login = () => {
                         <FcGoogle size={20} />
                         <p> Google</p>
                     </div>
+                    <div className='flex justify-center items-center space-x-2 border  m-2 p-2 border-gray-300 border-rounded cursor-pointer'>                   
+                        < FaGithub  size={20} />
+                        <p> GitHub</p>
+                    </div>
                  
                     <p className='px-6 text-sm text-center text-gray-400'>
                         Don't have an account ?{' '}
                         <Link
                             to='/register'
-                            className='hover:underline text-rose-400 hover:text-rose-500 '
+                            className='hover:underline text-rose-500 hover:text-rose-500 '
                         >
                             Sign up
                         </Link>

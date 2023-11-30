@@ -1,15 +1,15 @@
-import { BiLogInCircle } from "react-icons/bi";
+
 import { Link, NavLink } from "react-router-dom";
 import { BsList } from "react-icons/bs";
 import useAuth from "../../Hooks/useAuth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaw } from '@fortawesome/free-solid-svg-icons';
+import { faPaw , faUserPlus} from '@fortawesome/free-solid-svg-icons';
 const Navbar = () => {
 
   const { user , logOut} = useAuth()
   return (
   
-      <div className="navbar   lg:px-10 max-w-screen-xl fixed bg-opacity-10 bg-black z-10 ">
+      <div className="navbar max-w-5xl fixed bg-opacity-20 rounded-b-sm bg-black z-10 ">
 
         {/* Phone */}
         <div className="drawer md:hidden lg:hidden">
@@ -17,7 +17,7 @@ const Navbar = () => {
           <div className="drawer-content">
             {/* Page content here */}
             <div className="flex">
-              <div className=""><label htmlFor="my-drawer" className=" btn btn-sm text-xl drawer-button"><BsList></BsList></label></div>
+              <div className=""><label htmlFor="my-drawer" className=" btn btn-sm text-xl text-white drawer-button"><BsList></BsList></label></div>
             </div>
           </div>
           <div className="drawer-side">
@@ -60,7 +60,7 @@ const Navbar = () => {
 
         <div className="navbar-center">
          < FontAwesomeIcon size={10} icon={faPaw} className=" text-sm text-black lg:ml-2 py-2 px-2 rounded-md bg-rose-500 " />
-          <h2 className="text-white font-medium uppercase pl-2 mr-2"> Cozy Pets</h2>
+          <h2 className="text-white font-medium uppercase pl-2 mr-8"> Cozy Pets</h2>
           <div className=" md:ml-48 lg:ml-96 hidden lg:block md:block items-center space-x-5">
 
             <NavLink to="/" className={({ isActive }) =>
@@ -73,7 +73,7 @@ const Navbar = () => {
 
             <NavLink to="/donation" className={({ isActive }) =>
               isActive ? 'text-rose-500   font-semibold ' : ' font-medium  dark:text-white text-white hover:text-pink-500'
-            }  >  Donation Campaigns </NavLink>
+            }  >  Donation Camp  </NavLink>
 
 
             
@@ -106,14 +106,13 @@ const Navbar = () => {
                   <a className="justify-between">{user.email} </a>
                 </li>
                 <li> <Link to='/dashboard'>Dashboard</Link></li>
-               <li><Link onClick={logOut}>logout</Link></li>
+               <li><Link onClick={logOut}>Log Out</Link></li>
               </ul>
             </div>
               :
-              <Link to={'/login'}> <button className="hover:bg-pink-400 mr-2 bg-rose-500 btn btn-sm rounded-full text-black font-semibold   ">
-            <BiLogInCircle className=" text-xl  hidden lg:block"></BiLogInCircle>
-        
-            Login </button></Link>
+              <Link to={'/register'}> <button className=" px-5 md:px-3  bg-rose-500 btn btn-sm rounded-xl  md:rounded-full text-black font-semibold   ">
+            <FontAwesomeIcon size={20}className=" hidden lg:block" icon={faUserPlus} />
+            Sign Up </button></Link>
           }
         
         </div>

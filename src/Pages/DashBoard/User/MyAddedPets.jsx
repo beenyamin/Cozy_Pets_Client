@@ -63,16 +63,8 @@ const MyAddedPets = () => {
             <div className="flex mb-4 justify-center">
                 <h2 className="text-3xl font-semibold">Total Pets :{getAllPets.length}</h2>
 
-                {/* {
-    cart.length?  <Link to="/dashboard/payment">
-    <button className="btn btn-warning">Pay
-    </button>
-    </Link> : <button disabled className="btn btn-warning">Pay
-    </button>
- } */}
-
             </div>
-            <div className="overflow-x-auto rounded-t-xl">
+            <div className="overflow-x-auto rounded-t-xl ">
                 <table className="table ">
                     {/* head */}
                     <thead className="bg-rose-500 text-white">

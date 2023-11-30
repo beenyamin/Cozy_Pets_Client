@@ -8,7 +8,7 @@ const AdoptionRequest = () => {
                 <title> DashBoard | AdoptionRequest </title>
             </Helmet>
              
-            AdoptionRequest
+        <h2 className="text-center text-xl font-bold mt-40"> No Adoption Request Found</h2>
         </div>
     );
 };

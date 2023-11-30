@@ -5,7 +5,7 @@ const Extra2 = () => {
         <div>
             <section className="bg-gray-100 my-16 rounded  ">
         <div className="container mx-auto py-10">
-          <h2 className="text-4xl text-center text-rose-500 font-bold mb-8">What Our Customers Say</h2>
+          <h2 className="text-4xl text-center text-rose-500 font-bold mb-8">What People Say !</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-2">
          
             <div className="bg-white lg:ml-3 lg:mr-4  p-6 rounded-md  transition-transform transform-gpu hover:scale-105">

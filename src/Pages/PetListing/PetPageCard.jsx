@@ -5,7 +5,7 @@ const PetPageCard = ({ pet }) => {
   const { _id, name, image, location, age } = pet;
 
   return (
-    <div className='mt-14 mb-10 max-w-5xl mx-auto'>
+    <div className='mt-14 mb-10 max-w-5xl mx-auto transition-transform transform-gpu hover:scale-105'>
       <div>
         <div className="card w-72 bg-base-100 shadow-xl">
           <figure>
